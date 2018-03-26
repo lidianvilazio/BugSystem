@@ -1,0 +1,2 @@
+module BugTasksHelper
+end

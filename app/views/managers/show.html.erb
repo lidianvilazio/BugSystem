@@ -1,0 +1,5 @@
+<%= @manager.name %>
+<% @manager.tasks.each do |task| %>
+  <li><%= task.email %> </li>
+<% end %>
+<%= render "task_form" %>
