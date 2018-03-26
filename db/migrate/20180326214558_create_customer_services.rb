@@ -1,9 +1,9 @@
-class CreateCostumerServices < ActiveRecord::Migration[5.1]
+class CreateCustomerServices < ActiveRecord::Migration[5.1]
   def change
-    create_table :costumer_services do |t|
+    create_table :customer_services do |t|
       t.string :name
       t.string :description
-      t.integer :costumer_id
+      t.integer :customer_id
       t.boolean :completed, default: false
       t.timestamps
     end

@@ -1,2 +1,0 @@
-class CostumerService < ApplicationRecord
-end
