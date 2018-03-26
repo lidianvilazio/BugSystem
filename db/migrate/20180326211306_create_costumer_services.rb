@@ -1,6 +1,6 @@
-class CreateBugs < ActiveRecord::Migration[5.1]
+class CreateCostumerServices < ActiveRecord::Migration[5.1]
   def change
-    create_table :bugs do |t|
+    create_table :costumer_services do |t|
       t.string :name
       t.string :description
       t.integer :costumer_id

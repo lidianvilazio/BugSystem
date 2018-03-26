@@ -1,4 +1,4 @@
 class Bug < ApplicationRecord
-  has_many :bugtasks
-  has_many :tasks, through: :bug_tasks
+  has_many :tasks
+  belongs_to :costumer
 end

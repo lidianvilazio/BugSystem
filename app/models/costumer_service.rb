@@ -1,0 +1,2 @@
+class CostumerService < ApplicationRecord
+end

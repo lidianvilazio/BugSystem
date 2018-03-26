@@ -1,2 +1,0 @@
-class EmployeeTasksController < ApplicationController
-end

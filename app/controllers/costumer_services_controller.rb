@@ -1,0 +1,2 @@
+class CostumerServicesController < ApplicationController
+end
