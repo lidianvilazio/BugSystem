@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :bugs
   resources :employees
   get "profile/:id", to: "customers#show", as: "customer"
+  post "profile/:id", to: "customers#show", as: "customer/bug"
   get "signup", to: "customers#new", as: "signup"
   get 'login', to: "sessions#new", as: "login"
   post 'logout', to: 'sessions#destroy', as: 'logout'
