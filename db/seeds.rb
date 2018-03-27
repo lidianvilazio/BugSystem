@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-customer1 = Customer.create(name: "Elizabeth", email: "nonsense@notreal.org", passaword:"12345")
-customer2 = Customer.create(name: "Gray", email: "nonsense2@notreal.org"passaword:"12345")
+customer1 = Customer.create(name: "Elizabeth", email: "nonsense@notreal.org", password:"12345")
+customer2 = Customer.create(name: "Gray", email: "nonsense2@notreal.org",password:"12345")
 
-lidian = Employee.create(name: "Lidian")
-grayson = Employee.create(name: "Grayson")
+lidian = Employee.create(name: "Lidian", password: '12345', email: "nonsense3@notreal.org", department: 'Bug')
+grayson = Employee.create(name: "Grayson", password: '12345', email: "nonsense4@notreal.org", department: 'CX')
 
 bug1 = Bug.create(customer: customer1, description: "a bug")
 bug2 = Bug.create(customer: customer1, description: "a bad bug")
