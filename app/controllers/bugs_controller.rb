@@ -12,12 +12,12 @@ class BugsController < ApplicationController
 
   def create
     @bug = Bug.create(bug_params)
+    @bug.task
     redirect_to bugs_path
   end
 
   private
   def bug_params
     params.require(:bug).permit(:name, :description, :customer_id)
-
   end
 end

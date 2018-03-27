@@ -1,7 +1,6 @@
 class CustomerServicesController < ApplicationController
   before_action :authorized
 
-
   def index
     @customer_services = current_user.customer_services
   end
@@ -12,6 +11,7 @@ class CustomerServicesController < ApplicationController
 
   def create
     @customer_service = CustomerService.create(customer_service_params)
+    @customer_service.task
     redirect_to customer_services_path
   end
 
