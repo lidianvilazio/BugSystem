@@ -1,0 +1,24 @@
+<div>
+  <h1><%= @customer.name %></h1>
+</div>
+
+
+<div>
+  <%= form_tag do |f|%>
+    <%=radio_button_tag "type", '0'%>
+    <%= label_tag 'Customer Service'%><br>
+    <%=radio_button_tag "type", '1'%>
+    <%= label_tag 'Bugs'%><br><br>
+    <%=submit_tag 'Choose'%>
+  <%end%><br><br>
+</div>
+
+<%if params[:type] == '0'%>
+  <div>
+    <%=render 'customer_service_form'%>
+  </div>
+<%elsif params[:type] == '1'%>
+  <div>
+    <%=render 'bug_form'%>
+  </div>
+<%end%>

@@ -1,0 +1,17 @@
+<h1>bugs</h1>
+  <% @customers.each do |customer| %>
+  <% customer.bugs.each do |bug| %>
+    <li><%= bug.description %></li>
+  <%end%>
+<%end%>
+<h1>customer service </h1>
+<% @customers.each do |customer| %>
+  <% customer.customer_services.each do |customer_service| %>
+    <li><%= customer_service.description %></li>
+  <%end%>
+<%end%>
+
+<h1>bugs</h1>
+  <% @customers.each do |customer| %>
+    <li><%= link_to customer.name, customer %></li>
+<%end%>

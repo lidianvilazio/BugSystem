@@ -1,0 +1,10 @@
+<%= @employee.name %><br>
+<%= @employee.department %>
+
+<% @employee.tasks.each do |task| %>
+  <%if task.bug%>
+    <li><%=link_to task.bug.name, task.bug%></li>
+  <%elsif task.customer_service%>
+    <li><%= link_to task.customer_service.name, task.customer_service%></li>
+  <%end%>
+<% end %>

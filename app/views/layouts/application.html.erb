@@ -9,6 +9,13 @@
   </head>
 
   <body>
+    <div>
+      <%if logged_in?%>
+        <%= link_to 'Log out', logout_path, method: :post%>
+      <%else%>
+        <%= link_to 'Log in', login_path%>
+        <%end%>
+    </div>
     <%= yield %>
   </body>
 </html>
