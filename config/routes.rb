@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "bug/:id", to: "bugs#show", as: "bug"
   post "bug/:id", to: "bugs#show", as: "bug/solve"
   patch 'bug/:id', to: 'bugs#update', as: 'bug/solved'
-  resource :bugs, to: [:index, :create,:new]
+  resources :bugs, to: [:index, :create, :new]
   resources :employees
   get "profile/:id", to: "customers#show", as: "customer"
   post "profile/:id", to: "customers#show", as: "customer/bug"

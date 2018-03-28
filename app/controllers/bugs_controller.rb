@@ -3,7 +3,7 @@ class BugsController < ApplicationController
 
 
   def index
-    @bugs = current_user.bugs
+    @bugs = logged_in?.bugs
   end
 
   def new
@@ -18,11 +18,11 @@ class BugsController < ApplicationController
 
   def show
     @bug = Bug.find(params[:id])
+    @user = logged_in?.class
   end
 
   def update
     @bug = Bug.find(params[:id])
-    
     @bug.update(bug_params)
     redirect_to @bug
   end
