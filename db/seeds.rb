@@ -31,12 +31,3 @@ customer_service1.task
 customer_service2.task
 customer_service3.task
 customer_service4.task
-# Task.create(employee: lidian, bug: bug2)
-# Task.create(employee: lidian, bug: bug3)
-# Task.create(employee: grayson, bug: bug4)
-# Task.create(employee: grayson, bug: bug1)
-#
-# Task.create(employee: grayson, customer_service: customer_service1)
-# Task.create(employee: grayson, customer_service: customer_service2)
-# Task.create(employee: lidian, customer_service: customer_service3)
-# Task.create(employee: lidian, customer_service: customer_service4)
