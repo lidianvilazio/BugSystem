@@ -2,7 +2,7 @@
   <h1><%= @customer.name %></h1>
 </div>
 
-
+<%= link_to "My Bugs", bugs_path%>
 <div>
   <%= form_tag do |f|%>
     <%=radio_button_tag "type", '0'%>
