@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :customer_services
   resources :tasks
-  resources :bugs
+  get "bug/:id", to: "bugs#show", as: "bug"
+  post "bug/:id", to: "bugs#show", as: "bug/solve"
+  resource :bugs, to: [:index, :create,:new]
   resources :employees
   get "profile/:id", to: "customers#show", as: "customer"
   post "profile/:id", to: "customers#show", as: "customer/bug"
