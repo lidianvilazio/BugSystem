@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 20180326214558) do
   create_table "bugs", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "solution_description"
+    t.integer "rating"
     t.integer "customer_id"
     t.boolean "completed", default: false
     t.datetime "created_at", null: false
@@ -24,6 +26,8 @@ ActiveRecord::Schema.define(version: 20180326214558) do
   create_table "customer_services", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "solution_description"
+    t.integer "rating"
     t.integer "customer_id"
     t.boolean "completed", default: false
     t.datetime "created_at", null: false
