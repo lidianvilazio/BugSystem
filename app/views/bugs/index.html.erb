@@ -1,6 +1,8 @@
+
+
 <h1>Bugs</h1>
 
 <%@bugs.each do |bug|%>
-  <li><%= bug.name%>
+  <li><%=link_to bug.name, bug%>
   <%= bug.description%></li>
 <%end%>

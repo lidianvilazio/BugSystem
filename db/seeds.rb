@@ -17,15 +17,20 @@ bug2 = Bug.create(name: "bug2",customer: customer1, description: "a bad bug")
 bug3 = Bug.create(name: "bug3",customer: customer2, description: "a third thing")
 bug4 = Bug.create(name: "bug4",customer: customer2, description: "another problem with your code")
 
-customer_service1 = CustomerService.create(customer: customer2, description: "you guys are reallly REALLY bad")
-customer_service2 = CustomerService.create(customer: customer2, description: "what is going ON with you guys?")
-customer_service3 = CustomerService.create(customer: customer1, description: "is this an app?")
-customer_service4 = CustomerService.create(customer: customer2, description: "i sincerely don't understand what this even is supposed to do")
+customer_service1 = CustomerService.create(name: 'customer_service1',customer: customer2, description: "you guys are reallly REALLY bad")
+customer_service2 = CustomerService.create(name: 'customer_service2',customer: customer2, description: "what is going ON with you guys?")
+customer_service3 = CustomerService.create(name: 'customer_service3',customer: customer2, description: "is this an app?")
+customer_service4 = CustomerService.create(name: 'customer_service4',customer: customer2, description: "i sincerely don't understand what this even is supposed to do")
 
 bug1.task
 bug2.task
 bug3.task
 bug4.task
+
+customer_service1.task
+customer_service2.task
+customer_service3.task
+customer_service4.task
 # Task.create(employee: lidian, bug: bug2)
 # Task.create(employee: lidian, bug: bug3)
 # Task.create(employee: grayson, bug: bug4)

@@ -5,8 +5,6 @@ class Bug < ApplicationRecord
 
   def task
     task = Task.create(bug:self, employee: employee)
-    self.tasks << task
-    employee.tasks << task
   end
 
   def employee

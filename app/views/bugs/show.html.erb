@@ -1,0 +1,14 @@
+
+<p><%=@bug.task.employee.name%></p>
+<h1><%=@bug.name%></h1>
+<p><%=@bug.description%></p>
+
+<%= form_tag do |t|%>
+<%=radio_button_tag "type", '1'%>
+<%= label_tag "Solve this Problem?"%>
+<%=submit_tag "Submit"%>
+<%end%>
+
+<%if type == '1'%>
+<%= render "form"%>
+<%end%>

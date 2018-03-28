@@ -15,6 +15,10 @@ class CustomerServicesController < ApplicationController
     redirect_to customer_services_path
   end
 
+  def show
+    @customer_service = CustomerService.find(params[:id])
+  end
+
   private
   def customer_service_params
     params.require(:customer_service).permit(:name, :description, :customer_id)

@@ -16,8 +16,12 @@ class BugsController < ApplicationController
     redirect_to bugs_path
   end
 
+  def show
+    @bug = Bug.find(params[:id])
+  end
+
   private
   def bug_params
-    params.require(:bug).permit(:name, :description, :customer_id)
+    params.require(:bug).permit(:name, :description, :customer_id,:type)
   end
 end
