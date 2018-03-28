@@ -2,6 +2,7 @@ class CustomerServicesController < ApplicationController
   before_action :authorized
 
   def index
+    # byebug
     @customer_services = logged_in?.customer_services
   end
 
@@ -16,6 +17,7 @@ class CustomerServicesController < ApplicationController
   end
 
   def show
+    byebug
     @customer_service = CustomerService.find(params[:id])
     @user = logged_in?.class
   end

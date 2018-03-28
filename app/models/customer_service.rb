@@ -7,6 +7,8 @@ class CustomerService < ApplicationRecord
     task = Task.create(customer_service: self, employee: employee)
   end
 
+  private
+
   def employee
     employee = Employee.all.select {|employee| employee.department == 'CX'}.first
   end

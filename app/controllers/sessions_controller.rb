@@ -3,12 +3,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @customer = Customer.find_by(email: params[:email])
-    @employee = Employee.find_by(email: params[:email])
-    if @customer && @customer.authenticate(params[:password])
+    byebug
+    if Customer.find_by(email: params[:email]).authenticate(params[:password])
+      @customer = Customer.find_by(email: params[:email])
       session[:user_id] = @customer.id
       redirect_to customer_path(@customer)
-    elsif @employee && @employee.authenticate(params[:password])
+    elsif Employee.find_by(email: params[:email]).authenticate(params[:password])
+      @employee = Employee.find_by(email: params[:email])
       session[:user_id] = @employee.id
       redirect_to employee_path(@employee)
     else

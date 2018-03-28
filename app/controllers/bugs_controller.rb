@@ -3,6 +3,7 @@ class BugsController < ApplicationController
 
 
   def index
+    # byebug
     @bugs = logged_in?.bugs
   end
 
