@@ -20,8 +20,15 @@ class BugsController < ApplicationController
     @bug = Bug.find(params[:id])
   end
 
+  def update
+    @bug = Bug.find(params[:id])
+    
+    @bug.update(bug_params)
+    redirect_to @bug
+  end
+
   private
   def bug_params
-    params.require(:bug).permit(:name, :description, :customer_id,:type)
+    params.require(:bug).permit(:name, :description, :customer_id,:solution_description, :completed, :type)
   end
 end

@@ -1,14 +1,19 @@
-
+<%= link_to "Back", employee_path(@bug.task.employee)%>
 <p><%=@bug.task.employee.name%></p>
 <h1><%=@bug.name%></h1>
 <p><%=@bug.description%></p>
 
-<%= form_tag do |t|%>
-<%=radio_button_tag "type", '1'%>
-<%= label_tag "Solve this Problem?"%>
-<%=submit_tag "Submit"%>
-<%end%>
 
-<%if params[:type] == '1'%>
+<%if @bug.completed == true%>
+  <p>Problem Solved</p>
+  <%= @bug.solution_description%>
+  <%= @bug.customer.name%>
+<%elsif params[:type] == nil%>
+  <%= form_tag do |t|%>
+    <%=radio_button_tag "type", '1'%>
+    <%= label_tag "Solve this Problem?"%><br><br>
+    <%=submit_tag "Submit"%>
+  <%end%><br><br><br>
+<%else%>
   <%= render "form"%>
 <%end%>

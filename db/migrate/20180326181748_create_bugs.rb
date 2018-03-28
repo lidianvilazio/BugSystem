@@ -3,6 +3,8 @@ class CreateBugs < ActiveRecord::Migration[5.1]
     create_table :bugs do |t|
       t.string :name
       t.string :description
+      t.string :solution_description
+      t.integer :rating
       t.integer :customer_id
       t.boolean :completed, default: false
       t.timestamps
