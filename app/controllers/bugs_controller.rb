@@ -3,8 +3,12 @@ class BugsController < ApplicationController
 
 
   def index
-    byebug
-    @bugs = logged_in?.(logged_in?.account_type).bugs
+    # byebug
+    if current_user.account_type == 'customer'
+      @bugs = current_user.customer.bugs
+    elsif current_user.account_type == 'employee'
+      @bugs = current_user.employee.customer_services
+    end
   end
 
   def new

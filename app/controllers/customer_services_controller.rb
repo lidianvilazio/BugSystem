@@ -3,7 +3,11 @@ class CustomerServicesController < ApplicationController
 
   def index
     # byebug
-    @customer_services = logged_in?.customer_services
+    if current_user.account_type == 'customer'
+      @customer_services = current_user.customer.customer_services
+    elsif current_user.account_type == 'employee'
+      @customer_services == current_user.employee.customer_services
+    end
   end
 
   def new
