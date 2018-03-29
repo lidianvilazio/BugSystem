@@ -10,8 +10,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.valid?
+      @user.associate_customer
       @user.save
-      redirect_to @user
+      redirect_to @user.customer
     else
       redirect_to signup_path
     end

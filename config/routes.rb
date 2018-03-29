@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get "profile/:id", to: "customers#show", as: "customer"
   post "profile/:id", to: "customers#show", as: "customer/bug"
-  get "signup", to: "customers#new", as: "signup"
+  get "signup", to: "users#new", as: "signup"
   get 'login', to: "sessions#new", as: "login"
   post 'logout', to: 'sessions#destroy', as: 'logout'
   post 'sessions', to: 'sessions#create', as: 'sessions'
