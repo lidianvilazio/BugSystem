@@ -1,7 +1,19 @@
+
 <%= form_tag sessions_path do |f|%>
-  <%=label_tag :email%>
-  <%=text_field_tag :email%><br>
-  <%=label_tag :password%>
-  <%=password_field_tag :password%><br><br>
-  <%=submit_tag :Login%>
+    <div class="col-lg-6 mb-3 center">
+      <%=label_tag :email %><br>
+      <%=text_field_tag :email%><br>
+    </div>
+    <div class="col-lg-6 mb-3">
+      <%=label_tag :password%><br>
+      <%=password_field_tag :password%><br><br>
+    </div>
+    <div>
+      <%=button_tag :Login%><br>
+    </div><br>
+   <div>
+     <%= link_to signup_path, class: 'btn btn-success' do %>
+       <i class="glyphicon glyphicon-plus"></i>Signup
+      <% end %>
+   </div>
 <%end%>
