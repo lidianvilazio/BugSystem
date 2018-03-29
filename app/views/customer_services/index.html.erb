@@ -1,5 +1,10 @@
-<h1>Customer Service</h1>
-<%@customer_services.each do |customer_service|%>
-  <li><%= customer_service.name%>
-  <%= customer_service.description%></li>
-<%end%>
+<div class="container">
+  <div class="title">
+    <h1>Customer Service</h1>
+  </div>
+  <div id="customer" class= "bug auth-form-body mt-3">
+    <%@customer_services.each do |customer_service|%>
+      <li><%=link_to customer_service.name, customer_service%>
+    <%end%>
+  </div>
+</div>

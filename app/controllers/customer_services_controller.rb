@@ -2,7 +2,6 @@ class CustomerServicesController < ApplicationController
   before_action :authorized
 
   def index
-    # byebug
     if current_user.account_type == 'customer'
       @customer_services = current_user.customer.customer_services
     elsif current_user.account_type == 'employee'
@@ -21,7 +20,6 @@ class CustomerServicesController < ApplicationController
   end
 
   def show
-    byebug
     @customer_service = CustomerService.find(params[:id])
     @user = logged_in?.class
   end

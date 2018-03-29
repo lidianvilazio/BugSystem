@@ -1,14 +1,24 @@
 <div>
-  <h1>Bugs</h1>
+  <p>Bugs</p>
 </div>
 
 <div>
-  <%=form_for @customer.bugs.build do |f|%>
-    <%= f.label :name%>
-    <%= f.text_field :name%>
-    <%= f.label :description%>
-    <%= f.text_field :description%>
-    <%= f.hidden_field :customer_id, value: @customer.id%>
-    <%=f.submit "Create Bug"%>
+  <%=form_for @customer.bugs.build, class:'auth-form-body mt-3' do |f|%>
+    <div>
+      <p><%= f.label :name%></p>
+      <%= f.text_field :name%>
+    </div><br>
+    <div>
+      <p><%= f.label :description%></p>
+      <%= f.text_area :description%>
+    </div><br>
+    <div>
+      <%= f.hidden_field :customer_id, value: @customer.id%>
+      <%=f.submit "Create Complaint", class: "btn btn-info"%>
+    </div><br>
+    <div>
+      <%= link_to params[:type] = nil, class: "btn btn-info" do %>Back
+       <% end %>
+    </div>
   <%end%>
 </div>
