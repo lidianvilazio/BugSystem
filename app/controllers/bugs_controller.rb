@@ -23,7 +23,6 @@ class BugsController < ApplicationController
 
   def show
     @bug = Bug.find(params[:id])
-    @user = logged_in?.class
   end
 
   def update
