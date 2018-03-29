@@ -4,7 +4,7 @@
 </div>
 
 <div>
-  <%=form_for @bug.review.build do |f|%>
+  <%=form_for @bug.reviews.build do |f|%>
     <%= f.label :rating%>
     <%= f.text_field :rating%>
     <%= f.label :description%>

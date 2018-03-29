@@ -15,8 +15,6 @@
         <p>Problem Solved</p>
         <p>Solution Description: <%= @bug.solution_description%></p>
         <%= link_to "Back", employee_path(@bug.task.employee)%>
-
-
       <%elsif params[:type] == nil%>
         <%= form_tag class: 'auth-form-body mt-3 bug_solve' do |t|%>
           <div class="col-lg-12 mb-6">
@@ -27,10 +25,10 @@
             <%=submit_tag "Submit",class: "btn btn-info"%>
           </div><br><br>
           <div>
-            <%= link_to employee_path(@bug.task.employee), class: "btn btn-info" do %>Back
+          <%= link_to employee_path(@bug.task.employee), class: "btn btn-info" do %>Back
         <% end %>
           </div>
-        <%end%>
+        <% end %>
       <%else%>
       <div class="container">
         <%= render "form"%>
@@ -40,14 +38,16 @@
   <%elsif logged_in?.account_type == "customer"%>
     <p><%=@bug.customer.name%></p><br>
     <p>Solution - <%= @bug.solution_description%></p><br>
+    <%= form_tag do |f|%>
     <div class="col-lg-12 mb-6">
       <%=radio_button_tag "revbutton", '1'%>
       <%= label_tag "Add Review?"%><br><br>
       <%=submit_tag "Submit",class: "btn btn-info"%>
+    <% end %>
     </div>
-    <%if params[:revbutton] == 1%>
+    <%if params[:revbutton] == "1"%>
+    <%byebug%>
     <div class="container">
-      <%byebug%>
       <%= render "review_form"%>
     </div>
     <%end%>

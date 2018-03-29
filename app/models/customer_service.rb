@@ -3,6 +3,7 @@ class CustomerService < ApplicationRecord
   has_one :employee, through: :task
   belongs_to :customer
   validates :name, :description, presence: true
+  has_one :review
 
   def task
     Task.create(customer_service: self, employee: employee)
