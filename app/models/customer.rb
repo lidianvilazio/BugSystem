@@ -1,5 +1,6 @@
 class Customer < ApplicationRecord
   has_one :user
+  has_many :reviews
   has_many :customer_services
   has_many :bugs
   validates :name, :email, presence: true
