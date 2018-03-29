@@ -3,8 +3,8 @@ class BugsController < ApplicationController
 
 
   def index
-    # byebug
-    @bugs = logged_in?.bugs
+    byebug
+    @bugs = logged_in?.(logged_in?.account_type).bugs
   end
 
   def new
