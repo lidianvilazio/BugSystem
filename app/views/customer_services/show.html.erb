@@ -1,7 +1,7 @@
 <h1><%=@customer_service.name%></h1>
 <p><%=@customer_service.description%></p>
 
-<%if @user.name == "Employee"%>
+<%if logged_in?.account_type == "employee"%>
   <p><%=@customer_service.task.employee.name%></p>
   <%if @customer_service.completed == true%>
     <p>Problem Solved</p>
@@ -17,7 +17,7 @@
   <%else%>
     <%= render "form"%>
   <%end%>
-  <%elsif @user.name == "Customer"%>
+  <%elsif logged_in.account_type == "customer"%>
     <p><%=@customer_service.customer.name%></p>
     <p>Solution - <%= @customer_service.solution_description%></p>
     <%= link_to "Back", customer_path(@customer_service.customer)%>
