@@ -5,10 +5,9 @@
   </div>
   <div id="customer" class= "bug auth-form-body mt-3">
     <%@bugs.each do |bug|%>
-      <li><%=link_to bug.name, bug%></li>
+      <li class='li'><%=link_to bug.name, bug%></li>
     <%end%>
-    <%@bugs.select do |bug|%>
-      <%= link_to bug.customer%>
-    <%end%>
+    <%= link_to customer_path(@bugs.first.customer.id), class: "btn btn-info" do %>Back
+     <% end %>
   </div>
 </div>

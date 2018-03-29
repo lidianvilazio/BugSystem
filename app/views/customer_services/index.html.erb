@@ -6,5 +6,7 @@
     <%@customer_services.each do |customer_service|%>
       <li><%=link_to customer_service.name, customer_service%>
     <%end%>
+    <%= link_to customer_path(@customer_services.first.customer.id), class: "btn btn-info" do %>Back
+     <% end %>
   </div>
 </div>
