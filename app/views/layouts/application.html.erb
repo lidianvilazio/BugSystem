@@ -3,6 +3,7 @@
   <head>
     <title>BugSystem</title>
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon-bug.ico' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -10,15 +11,12 @@
 
   <body class="bg-light">
   <div id="main-container" class="container">
+    <%if logged_in?%>
+      <%= render "layouts/header"%>
+    <%end%>
     <div class="row">
-      <%if !logged_in?%>
-        <%= link_to logout_path, method: :post, class: 'btn btn-success' do %>
-          <i class="glyphicon glyphicon-plus"></i>Logout
-         <% end %>
-      <%else%>
-      <%end%>
       <%= yield %>
-      <%= render "layouts/footer" %>
+      <%= render "layouts/footer"%>
     </div>
   </div>
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
