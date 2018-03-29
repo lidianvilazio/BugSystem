@@ -35,9 +35,9 @@
       </div>
       <%end%>
     </div>
-  </div>
-  <%elsif logged_in?.account_type == "customer"%>
+    <%elsif logged_in?.account_type == "customer"%>
     <p><%=@bug.customer.name%></p>
     <p>Solution - <%= @bug.solution_description%></p>
     <%= link_to "Back", customer_path(@bug.customer)%>
-<%end%>
+    <%end%>
+  </div>

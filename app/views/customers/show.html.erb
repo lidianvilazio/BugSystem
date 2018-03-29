@@ -1,25 +1,41 @@
-<div>
-  <h1><%= @customer.name %></h1>
-</div>
+<div class="container">
 
-<%= link_to "My Bugs", bugs_path%>
-<%= link_to "My Customer Service Tickets", customer_services_path%>
-<div>
-  <%= form_tag do |f|%>
-    <%=radio_button_tag "type", '0'%>
-    <%= label_tag 'Customer Service'%><br>
-    <%=radio_button_tag "type", '1'%>
-    <%= label_tag 'Bugs'%><br><br>
-    <%=submit_tag 'Choose'%>
-  <%end%><br><br>
-</div>
+  <div class="title">
+    <h1>Welcome <%= @customer.name %></h1>
+  </div>
 
-<%if params[:type] == '0'%>
-  <div>
-    <%=render 'customer_service_form'%>
+  <div id="customer" class= "bug auth-form-body mt-3">
+    <%if params[:type] == nil%>
+      <div>
+        <%= link_to bugs_path, class: "btn btn-info" do %>My Bugs
+        <% end %>
+      </div><br>
+      <div>
+        <%= link_to customer_services_path, class: "btn btn-info" do %>My Customer Service
+        <% end %>
+      </div><br>
+      <p>Choose a complain type</p>
+      <%= form_tag do |f|%>
+        <div>
+          <p><%=radio_button_tag "type", '0'%>
+          <%= label_tag 'Customer Service'%></p>
+        </div>
+        <div>
+          <p><%=radio_button_tag "type", '1'%>
+          <%= label_tag 'Bugs'%></p>
+        </div>
+        <div>
+          <%=submit_tag 'Choose',class: "btn btn-info"%>
+          <%end%>
+        </div>
+      <%elsif params[:type] == '0'%>
+      <div>
+        <%=render 'customer_service_form'%>
+      </div>
+      <%elsif params[:type] == '1'%>
+      <div>
+        <%=render 'bug_form'%>
+      </div>
+      <%end%>
   </div>
-<%elsif params[:type] == '1'%>
-  <div>
-    <%=render 'bug_form'%>
-  </div>
-<%end%>
+</div>

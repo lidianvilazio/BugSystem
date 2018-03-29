@@ -17,7 +17,7 @@
   <%else%>
     <%= render "form"%>
   <%end%>
-  <%elsif logged_in.account_type == "customer"%>
+  <%elsif logged_in?.account_type == "customer"%>
     <p><%=@customer_service.customer.name%></p>
     <p>Solution - <%= @customer_service.solution_description%></p>
     <%= link_to "Back", customer_path(@customer_service.customer)%>

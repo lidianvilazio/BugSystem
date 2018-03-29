@@ -1,6 +1,14 @@
-<h1>Bugs</h1>
 
-<%@bugs.each do |bug|%>
-  <li><%=link_to bug.name, bug%>
-  <%= bug.description%></li>
-<%end%>
+<div class="container">
+  <div class="title">
+    <h1>Bugs</h1>
+  </div>
+  <div id="customer" class= "bug auth-form-body mt-3">
+    <%@bugs.each do |bug|%>
+      <li><%=link_to bug.name, bug%></li>
+    <%end%>
+    <%@bugs.select do |bug|%>
+      <%= link_to bug.customer%>
+    <%end%>
+  </div>
+</div>
