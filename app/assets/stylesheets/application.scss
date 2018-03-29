@@ -31,7 +31,7 @@ form {
 }
 
 .auth-form-body {
-    padding: 20px;
+    padding: 40px;
     font-size: 14px;
     background-color: #fff;
     border: 1px solid #d8dee2;
@@ -79,8 +79,12 @@ form {
 
 footer {
   text-align: center;
-  position: static;
   color: black;
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
+  padding-top:20px;
   background-image: linear-gradient(to bottom right, #F7F7F7, #EAFBFF);
 }
 

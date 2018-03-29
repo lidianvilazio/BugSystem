@@ -1,6 +1,6 @@
 
 
-<%if @user.name == "Employee"%>
+<%if logged_in?.account_type == "employee"%>
   <p><%=@bug.task.employee.name%></p>
   <%if @bug.completed == true%>
     <p>Problem Solved</p>
@@ -16,7 +16,7 @@
   <%else%>
     <%= render "form"%>
   <%end%>
-  <%elsif @user.name == "Customer"%>
+  <%elsif logged_in?.account_type == "customer"%>
     <p><%=@bug.customer.name%></p>
     <p>Solution - <%= @bug.solution_description%></p>
     <%= link_to "Back", customer_path(@bug.customer)%>
