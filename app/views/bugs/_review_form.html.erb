@@ -1,0 +1,18 @@
+
+<div>
+  <h1>Review Form</h1>
+</div>
+
+<div>
+  <%=form_for @bug.review.build do |f|%>
+    <%= f.label :rating%>
+    <%= f.text_field :rating%>
+    <%= f.label :description%>
+    <%= f.text_field :description%>
+    <%= f.hidden_field :customer_id, value: @bug.customer.id%>
+    <%= f.hidden_field :employee_id, value: @bug.task.employee.id%>
+    <%= f.hidden_field :task_id, value: @bug.task.id%>
+    <%= f.hidden_field :bug_id, value: @bug.id%>
+    <%=f.submit "Submit Review"%>
+  <%end%>
+</div>
