@@ -1,5 +1,6 @@
 class Bug < ApplicationRecord
-  has_many :tasks
+  has_one :task
+  has_one :employee, through: :task
   belongs_to :customer
   validates :name, :description, presence: true
 

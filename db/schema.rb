@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(version: 20180329143220) do
     t.integer "rating"
     t.integer "customer_id"
     t.integer "employee_id"
+    t.integer "customer_service_id"
+    t.integer "bug_id"
     t.integer "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

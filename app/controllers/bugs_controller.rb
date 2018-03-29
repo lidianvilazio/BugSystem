@@ -32,6 +32,7 @@ class BugsController < ApplicationController
   end
 
   private
+  
   def bug_params
     params.require(:bug).permit(:name, :description, :customer_id,:solution_description, :completed, :type)
   end
