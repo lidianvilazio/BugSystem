@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
  * {
   box-sizing: border-box;
 }
@@ -23,6 +22,7 @@
    font-family: 'Lato', sans-serif;
    color:#525c65;
    font-weight: 300;
+   font-family: 'Josefin Sans', sans-serif;
  }
 
 form {
@@ -46,6 +46,10 @@ form {
   margin-left: auto;
   margin-top: 100px;
   position: relative;
+}
+
+.container {
+  overflow: hidden;
 }
 
 .form-control {
@@ -75,7 +79,7 @@ form {
   width:100px;
   height:100px;
   margin-top: 20px;
-  margin-left: 90%;
+  margin-left: 85%;
   position: relative;
 }
 

@@ -2,9 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 ul {
-    display: table-cell;
+    display: flex;
     height: 100px;
     list-style-type: none;
-    margin: 10px;
-    vertical-align: center;
+    margin: auto;
+}
+
+.name {
+  text-align: center;
+  margin: auto;
+}
+
+.bug {
+  text-align: center;
+  margin: auto;
+}
+
+#employee {
+  width: 200px;
+  height: 300px;
+}
+.li {
+  text-align: center;
 }

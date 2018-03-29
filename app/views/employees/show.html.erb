@@ -1,13 +1,20 @@
 
-<%= @employee.name %><br>
-<%= @employee.department %>
+<div class="col-lg-12 mb-6 name">
+  <p>Welcome <%= @employee.name %></p> <br>
+  <p><%= @employee.department %></p>
+</div>
 
-<% @employee.tasks.each do |task| %>
-  <ul>
-    <%if task.bug%>
-    <li><%=link_to task.bug.name, task.bug%></li>
-    <%elsif task.customer_service%>
-    <li><%= link_to task.customer_service.name, task.customer_service%></li>
-    <%end%>
-  </ul>
-<% end %>
+
+<div id="employee" class="bug auth-form-body mt-3">
+    <div class="content">
+      <% @employee.tasks.each do |task| %>
+        <ul>
+          <%if task.bug%>
+            <li class="li"><%=link_to task.bug.name, task.bug%></li>
+          <%elsif task.customer_service%>
+            <li class="li"><%= link_to task.customer_service.name, task.customer_service%></li>
+          <%end%>
+        </ul>
+      <% end %>
+    </div>
+</div>
