@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329143220) do
+ActiveRecord::Schema.define(version: 20180330124809) do
 
   create_table "bugs", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 20180329143220) do
     t.integer "rating"
     t.integer "customer_id"
     t.boolean "completed", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "customer_reviews", force: :cascade do |t|
+    t.string "description"
+    t.integer "rating"
+    t.integer "customer_id"
+    t.integer "employee_id"
+    t.integer "ticket_id"
+    t.string "ticket_type"
+    t.integer "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,18 +59,6 @@ ActiveRecord::Schema.define(version: 20180329143220) do
     t.string "name"
     t.string "department"
     t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.string "description"
-    t.integer "rating"
-    t.integer "customer_id"
-    t.integer "employee_id"
-    t.integer "customer_service_id"
-    t.integer "bug_id"
-    t.integer "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
