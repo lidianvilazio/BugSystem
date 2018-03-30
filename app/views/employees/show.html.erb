@@ -9,11 +9,7 @@
     <div class="content">
       <% @employee.tasks.each do |task| %>
         <ul>
-          <%if task.bug%>
-            <li class="li"><%=link_to task.bug.name, task.bug%></li>
-          <%elsif task.customer_service%>
-            <li class="li"><%= link_to task.customer_service.name, task.customer_service%></li>
-          <%end%>
+            <li class="li"><%=link_to task.ticket.name, task.ticket%></li>
         </ul>
       <% end %>
     </div>

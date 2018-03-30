@@ -26,12 +26,12 @@ customer_service2 = CustomerService.create(name: 'customer_service2',customer: c
 customer_service3 = CustomerService.create(name: 'customer_service3',customer: customer1.customer, description: "is this an app?")
 customer_service4 = CustomerService.create(name: 'customer_service4',customer: customer2.customer, description: "i sincerely don't understand what this even is supposed to do")
 
-bug1.task
-bug2.task
-bug3.task
-bug4.task
+bug1.task_create
+bug2.task_create
+bug3.task_create
+bug4.task_create
 
-customer_service1.task
-customer_service2.task
-customer_service3.task
-customer_service4.task
+customer_service1.task_create
+customer_service2.task_create
+customer_service3.task_create
+customer_service4.task_create
