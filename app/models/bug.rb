@@ -2,8 +2,9 @@ class Bug < ApplicationRecord
   has_one :task
   has_one :employee, through: :task
   belongs_to :customer
+  has_many :customer_reviews, as: :ticket
   validates :name, :description, presence: true
-  has_one :review
+
 
   def task
     Task.create(bug: self, employee: employee)

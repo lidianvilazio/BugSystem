@@ -20,5 +20,15 @@
   <%elsif logged_in?.account_type == "customer"%>
     <p><%=@customer_service.customer.name%></p>
     <p>Solution - <%= @customer_service.solution_description%></p>
+    <%= form_tag do |f|%>
+    <div class="col-lg-12 mb-6">
+      <%=radio_button_tag "revbutton", '1'%>
+      <%= label_tag "Add Review?"%><br><br>
+      <%=submit_tag "Submit",class: "btn btn-info"%>
+    <% end %>
+    </div>
+    <%if params[:revbutton] == "1"%>
+    <p><%=render "review_form"%></p>
+    <%end%>
     <%= link_to "Back", customer_path(@customer_service.customer)%>
 <%end%>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resources :customer_reviews
   root 'welcome#page', as: '/'
-  resources :reviews
   resources :users
   resources :tasks
 

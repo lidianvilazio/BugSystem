@@ -46,7 +46,7 @@
     <% end %>
     </div>
     <%if params[:revbutton] == "1"%>
-    <p>:)</p>
+    <p><%=render "review_form"%></p>
     <%end%>
     <%= link_to "Back", customer_path(@bug.customer)%>
   <%end%>

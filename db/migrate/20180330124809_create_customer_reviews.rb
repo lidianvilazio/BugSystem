@@ -1,12 +1,12 @@
-class CreateReviews < ActiveRecord::Migration[5.1]
+class CreateCustomerReviews < ActiveRecord::Migration[5.1]
   def change
-    create_table :reviews do |t|
+    create_table :customer_reviews do |t|
       t.string :description
       t.integer :rating
       t.integer :customer_id
       t.integer :employee_id
-      t.integer :customer_service_id
-      t.integer :bug_id
+      t.integer :ticket_id
+      t.string :ticket_type
       t.integer :task_id
       t.timestamps
     end
