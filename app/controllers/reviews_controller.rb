@@ -36,9 +36,9 @@ class ReviewsController < ApplicationController
   def review_params
     byebug
     if params[:customer_solution]
-      params.require(:review).permit(:description, :customer_id, :solution_description, :completed, :type)
+      params.require(:review).permit(:description, :rating, :customer_id, :employee_id, :customer_service_id, :task_id)
     elsif params[:bug]
-      params.require(:review).permit(:description, :customer_id, :solution_description, :completed, :type)
+      params.require(:review).permit(:description, :rating, :customer_id, :employee_id, :bug_id, :task_id)
     end
   end
 end
