@@ -1,3 +1,39 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.auth-form-body {
+    padding: 40px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #d8dee2;
+    border-top: 0;
+    border-radius: 0 0 3px 3px;
+}
+
+.form {
+  text-align: center;
+  box-sizing: border-box;
+  float: center;
+  margin-left: auto;
+  margin-top: 100px;
+  position: relative;
+}
+
+.user {
+  text-align: center;
+  width: 500px;
+  height: 500px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  background-image: linear-gradient(to bottom right, #F7F7F7, #EAFBFF);
+  margin-left: 475px;
+  list-style-type: none;
+}
+
+.login-img {
+  margin-top: 100px;
+  vertical-align: top;
+  position: relative;
+}

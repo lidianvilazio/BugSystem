@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get root '/' to: 'users#welcome'
   resources :reviews
   resources :users
   resources :tasks
@@ -6,7 +7,7 @@ Rails.application.routes.draw do
   get "customer_service/:id", to: "customer_services#show", as: "customer_service"
   post "customer_service/:id", to: "customer_services#show", as: "customer_service/solve"
   patch 'customer_service/:id', to: 'customer_services#update', as: 'customer_service/solved'
-  
+
   get "bug/:id", to: "bugs#show", as: "bug"
   post "bug/:id", to: "bugs#show", as: "bug/solve"
   patch 'bug/:id', to: 'bugs#update', as: 'bug/solved'
