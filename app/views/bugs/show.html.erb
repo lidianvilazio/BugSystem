@@ -36,18 +36,42 @@
       <%end%>
     </div>
   <%elsif logged_in?.account_type == "customer"%>
-    <p><%=@bug.customer.name%></p><br>
-    <p>Solution - <%= @bug.solution_description%></p><br>
-    <%= form_tag do |f|%>
-    <div class="col-lg-12 mb-6">
-      <%=radio_button_tag "revbutton", '1'%>
-      <%= label_tag "Add Review?"%><br><br>
-      <%=submit_tag "Submit",class: "btn btn-info"%>
-    <% end %>
-    </div>
-    <%if params[:revbutton] == "1"%>
-    <p><%=render "review_form"%></p>
-    <%end%>
-    <%= link_to "Back", customer_path(@bug.customer)%>
-  <%end%>
+      <div class="col-lg-12 mb-6 name">
+        <p><%=@bug.customer.name%></p><br>
+      </div>
+      <%if @bug.completed == true%>
+      <div class="col-lg-12 mb-6 name">
+        <p>Solution - <%= @bug.solution_description%></p><br>
+      </div>
+        <%if params[:revbutton] == "1"%>
+          <div class="container">
+            <div class="form fixed-top">
+              <%=render "review_form"%><br>
+              <%= link_to customer_path(@bug.customer), class: "btn btn-info" do %>Back
+              <% end %>
+            </div>
+          </div>
+        <%else%>
+        <div class="container">
+          <div class="form fixed-top">
+              <%= form_tag class:'auth-form-body mt-3 bug_solve' do |f|%>
+                <div class="col-lg-12 mb-6">
+                  <%=radio_button_tag "revbutton", '1'%>
+                  <%= label_tag "Add Review?"%><br><br>
+                </div>
+                <div class="col-lg-12 mb-6">
+                  <%=submit_tag "Submit",class: "btn btn-info"%><br><br>
+                  <%= link_to customer_path(@bug.customer), class: "btn btn-info" do %>Back
+                  <% end %>
+                </div>
+              <% end %>
+              <%end%>
+            </div>
+          </div>
+        <%end%>
+      <%else%>
+        <div class="col-lg-12 mb-6 name">
+          <p>Complain is open</p><br>
+        </div>
+      <%end%>
 </div>

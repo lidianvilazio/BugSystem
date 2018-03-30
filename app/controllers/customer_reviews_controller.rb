@@ -15,7 +15,7 @@ class CustomerReviewsController < ApplicationController
   def create
     @customer_review = CustomerReview.create(customer_review_params)
     @customer_review.task
-    redirect_to customer_reviews_path
+    redirect_to bugs_path
   end
 
   def show
@@ -31,7 +31,6 @@ class CustomerReviewsController < ApplicationController
   private
 
   def customer_review_params
-    byebug
     if params[:customer_solution]
       params.require(:customer_review).permit(:description, :rating, :customer_id, :employee_id, :customer_service_id, :task_id)
     elsif params[:bug]

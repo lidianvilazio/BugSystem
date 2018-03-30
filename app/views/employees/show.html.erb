@@ -11,10 +11,10 @@
         <ul>
           <%if task.bug && !task.bug.solution_description%>
             <li class="li"><%=link_to task.bug.name, task.bug%></li>
-          <%elsif task.customer_service%>
+          <%elsif task.customer_service && !task.customer_service.solution_description%>
             <li class="li"><%= link_to task.customer_service.name, task.customer_service%></li>
           <%else%>
-            break
+            solved
           <%end%>
         </ul>
       <% end %>

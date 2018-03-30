@@ -1,19 +1,26 @@
 
 <div>
-  <h1>Review Form</h1>
+  <p>Review Form</p>
 </div>
 
 <div>
-  <%byebug%>
-  <%=form_for @bug.customer_reviews.build do |f|%>
+  <%=form_for @bug.customer_reviews.build, class:'auth-form-body mt-3' do |f|%>
+  <div class="col-lg-12 mb-6">
     <%= f.label :rating%>
-    <%= f.text_field :rating%>
-    <%= f.label :description%>
-    <%= f.text_field :description%>
+    <%= f.select :rating, [1,2,3,4,5]%>
+  </div>
+  <div class="col-lg-12 mb-6">
+    <%= f.label :description%><br>
+    <%= f.text_area :description%>
+  </div><br>
+  <div class="col-lg-12 mb-6">
     <%= f.hidden_field :customer_id, value: @bug.customer.id%>
     <%= f.hidden_field :employee_id, value: @bug.task.employee.id%>
     <%= f.hidden_field :task_id, value: @bug.task.id%>
     <%= f.hidden_field :ticket_id, value: @bug.id%>
-    <%=f.submit "Submit Review"%>
+  </div>
+  <div class="col-lg-12 mb-6">
+    <%=f.submit "Submit Review",class: "btn btn-info"%>
+  </div>
   <%end%>
 </div>
