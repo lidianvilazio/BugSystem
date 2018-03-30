@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # get root '/' to: 'users#welcome'
+  root 'welcome#page', as: '/'
   resources :reviews
   resources :users
   resources :tasks
