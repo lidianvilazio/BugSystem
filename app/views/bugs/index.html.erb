@@ -4,10 +4,16 @@
     <h1>Bugs</h1>
   </div>
   <div id="customer" class= "bug auth-form-body mt-3">
-    <%@bugs.each do |bug|%>
-      <li class='li'><%=link_to bug.name, bug%></li>
+    <% if @bugs.length < 1%>
+      No Complaints open
+      <%= link_to 'profile/4', class: "btn btn-info" do %>Back
+       <% end %>
+    <%else%>
+      <%@bugs.each do |bug|%>
+        <li class='li'><%=link_to bug.name, bug%></li>
+      <%end%>
+      <%= link_to customer_path(@bugs.first.customer.id), class: "btn btn-info" do %>Back
+       <% end %>
     <%end%>
-    <%= link_to customer_path(@bugs.first.customer.id), class: "btn btn-info" do %>Back
-     <% end %>
   </div>
 </div>

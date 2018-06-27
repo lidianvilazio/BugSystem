@@ -7,11 +7,19 @@
   <div id="customer" class= "bug auth-form-body mt-3">
     <%if params[:type] == nil%>
       <div>
-        <%= link_to bugs_path, class: "btn btn-info" do %>My Bugs
+        <% if @customer.bugs.length >= 1 %>
+          <%= link_to bugs_path, class: "btn btn-info" do %>My Bugs
+          <% end %>
+        <%else%>
+          No Complaints open
         <% end %>
       </div><br>
       <div>
-        <%= link_to customer_services_path, class: "btn btn-info" do %>My Customer Service
+        <% if @customer.customer_services.length >= 1 %>
+          <%= link_to customer_services_path, class: "btn btn-info" do %>My Customer Service
+          <% end %>
+        <%else%>
+          No Complaints open
         <% end %>
       </div><br>
       <p>Choose a complaint type</p>

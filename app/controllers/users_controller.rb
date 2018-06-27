@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.associate_customer
       @user.save
-      redirect_to @user.customer
+      redirect_to login_path
     else
       redirect_to signup_path
     end

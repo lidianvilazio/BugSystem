@@ -13,7 +13,7 @@ class CustomersController < ApplicationController
       @customer.save
       redirect_to @customer
     else
-      redirect_to signup_path
+      redirect_to login_path
     end
   end
 
